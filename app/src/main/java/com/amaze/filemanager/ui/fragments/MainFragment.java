@@ -62,6 +62,7 @@ import com.amaze.filemanager.filesystem.files.CryptUtil;
 import com.amaze.filemanager.filesystem.files.EncryptDecryptUtils;
 import com.amaze.filemanager.filesystem.files.FileListSorter;
 import com.amaze.filemanager.filesystem.files.FileUtils;
+import com.amaze.filemanager.filesystem.files.MediaConnectionUtils;
 import com.amaze.filemanager.ui.activities.MainActivity;
 import com.amaze.filemanager.ui.activities.MainActivityViewModel;
 import com.amaze.filemanager.ui.dialogs.GeneralDialogCreation;
@@ -1385,7 +1386,8 @@ public class MainFragment extends Fragment
           LOG.warn("failure when hiding file", e);
         }
       }
-      FileUtils.scanFile(getActivity(), new HybridFile[] {new HybridFile(OpenMode.FILE, path)});
+      MediaConnectionUtils.scanFile(
+          getActivity(), new HybridFile[] {new HybridFile(OpenMode.FILE, path)});
     }
   }
 
